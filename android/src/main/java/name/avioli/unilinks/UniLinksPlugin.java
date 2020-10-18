@@ -112,7 +112,7 @@ public class UniLinksPlugin
             result.success(latestLink);
         } else if (call.method.equals("removeInitialLink")) {
             initialLink = null;
-            result.success();
+            result.success(null);
         } else {
             result.notImplemented();
         }
