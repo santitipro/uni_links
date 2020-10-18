@@ -106,14 +106,13 @@ public class UniLinksPlugin
 
     @Override
     public void onMethodCall(MethodCall call, MethodChannel.Result result) {
-        if (call.method.equals("getInitialLink")) {
+        if (call.method.equals("removeInitialLink")) {
+            initialLink = null;
+            result.success(null);
+        } else if (call.method.equals("getInitialLink")) {
             result.success(initialLink);
         } else if (call.method.equals("getLatestLink")) {
             result.success(latestLink);
-        } else if (call.method.equals("removeInitialLink")) {
-            initialIntent = false;
-            initialLink = null;
-            result.success(null);
         } else {
             result.notImplemented();
         }
