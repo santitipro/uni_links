@@ -78,8 +78,9 @@ static id _instance;
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result {
   if ([@"getInitialLink" isEqualToString:call.method]) {
     result(self.initialLink);
-    // } else if ([@"getLatestLink" isEqualToString:call.method]) {
-    //     result(self.latestLink);
+  } else if ([@"removeInitialLink" isEqualToString:call.method]) {
+    self.initialLink = nil;
+    result(nil);
   } else {
     result(FlutterMethodNotImplemented);
   }
