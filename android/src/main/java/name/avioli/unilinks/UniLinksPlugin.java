@@ -111,6 +111,7 @@ public class UniLinksPlugin
         } else if (call.method.equals("getLatestLink")) {
             result.success(latestLink);
         } else if (call.method.equals("removeInitialLink")) {
+            initialIntent = false;
             initialLink = null;
             result.success(null);
         } else {

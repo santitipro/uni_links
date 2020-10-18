@@ -20,7 +20,7 @@ Future<String> getInitialLink() async {
 }
 
 Future<void> removeInitialLink() async {
-  await _mChannel.invokeMethod<String>('removeInitialLink');
+  await _mChannel.invokeMethod<void>('removeInitialLink');
 }
 
 /// A convenience method that returns the initially stored link
